@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="dep" class="org.codancer.di.Department">
+            <property name="name" value="安保部"></property>
+        </bean>
+    
+        <bean id="emp" class="org.codancer.di.Employee">
+            <property name="name" value="lucy"></property>
+            <property name="age" value="50"></property>
+            <!--使用ref注入bean-->
+            <property name="department" ref="dep"></property>
+        </bean>
+
+
+
+        <bean id="emp2" class="org.codancer.di.Employee">
+            <property name="name" value="mary"></property>
+            <property name="age" value="20"></property>
+            <!--内部bean注入-->
+            <property name="department">
+                <bean id="dep2" class="org.codancer.di.Department">
+                    <property name="name" value="财务部"></property>
+                </bean>
+            </property>
+        </bean>
+
+
+    <bean id="dep3" class="org.codancer.di.Department">
+        <property name="name" value="技术研发部"></property>
+    </bean>
+    <bean id="emp3" class="org.codancer.di.Employee">
+        <property name="name" value="zm"></property>
+        <property name="age" value="22"></property>
+        <property name="department" ref="dep3"></property>
+        <!--级联赋值-->
+        <property name="department.name" value="测试部"></property>
+    </bean>
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stu1" class="org.codancer.Student">
+        <constructor-arg name="age" value="1"/>
+        <constructor-arg name="name" value="kangkang"/>
+    </bean>
+
+    <bean id="stu2" class="org.codancer.Student">
+        <constructor-arg name="age" value="1"/>
+        <constructor-arg name="name" value="zm"/>
+    </bean>
+
+    <bean id="tea1" class="org.codancer.Teacher">
+        <property name="name" value="cc"></property>
+        <property name="studentList">
+            <list>
+                <ref bean="stu1"></ref>
+                <ref bean="stu2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="tea2" class="org.codancer.Teacher">
+        <property name="name" value="dd"></property>
+        <property name="studentList">
+            <list>
+                <ref bean="stu1"></ref>
+                <ref bean="stu2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="school" class="org.codancer.School">
+        <property name="name" value="一中"></property>
+        <property name="teacherList">
+            <list>
+                <ref bean="tea1"></ref>
+                <ref bean="tea2"></ref>
+            </list>
+        </property>
+    </bean>
+</beans>

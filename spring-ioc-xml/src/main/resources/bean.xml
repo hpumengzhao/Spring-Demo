@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean的获取-->
+    <bean id="user" class="org.codancer.User"></bean>
+    <!--接口实现类的bean的获取-->
+    <bean id="UserDaoImpl" class="org.codancer.bean.UserDaoImpl"></bean>
+
+<!--    <bean id="UserDaoImpl2" class="org.codancer.bean.UserDaoImpl2"></bean>-->
+</beans>

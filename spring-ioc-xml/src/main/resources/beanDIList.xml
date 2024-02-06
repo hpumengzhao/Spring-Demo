@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dep" class="org.codancer.di.Department">
+        <property name="name" value="保安部"></property>
+        <property name="employeeList">
+            <list>
+                <ref bean="emp1"></ref>
+                <ref bean="emp2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="emp1" class="org.codancer.di.Employee">
+        <property name="name" value="lucy"></property>
+        <property name="age" value="11"></property>
+        <property name="hobbies">
+            <array>
+                <value>吃饭</value>
+            </array>
+        </property>
+        <property name="department" ref="dep"></property>
+    </bean>
+
+    <bean id="emp2" class="org.codancer.di.Employee">
+        <property name="name" value="cc"></property>
+        <property name="age" value="13"></property>
+        <property name="hobbies">
+            <array>
+                <value>吃饭</value>
+            </array>
+        </property>
+        <property name="department" ref="dep"></property>
+    </bean>
+</beans>
